@@ -80,12 +80,6 @@ function App() {
 
   return (
     <div className="app">
-      <div className="header">
-        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240320180346/gfg(1).png" alt="Game Image" className="game-image" />
-        <div className="game-info">
-          <h1>GeeksforGeeks Chess Game</h1>
-        </div>
-      </div>
       <div className="chessboard-container">
         <Chessboard position={game.fen()} onPieceDrop={onDrop} />
         {gameOver && (
