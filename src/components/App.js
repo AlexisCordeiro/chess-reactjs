@@ -1,8 +1,9 @@
+// App.js
+
 import '../styles/App.css';
 import { useState, useEffect } from 'react';
 import { Chessboard } from 'react-chessboard';
 import { Chess } from 'chess.js';
-import gameImage from '../assets/gfg.svg'; 
 
 function App() {
   const [game, setGame] = useState(new Chess());
@@ -80,7 +81,7 @@ function App() {
   return (
     <div className="app">
       <div className="header">
-        <img src={gameImage} alt="Game Image" className="game-image" />
+        <img src="https://media.geeksforgeeks.org/wp-content/uploads/20240320180346/gfg(1).png" alt="Game Image" className="game-image" />
         <div className="game-info">
           <h1>GeeksforGeeks Chess Game</h1>
         </div>
