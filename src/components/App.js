@@ -6,11 +6,12 @@ import { Chessboard } from 'react-chessboard';
 import { Chess } from 'chess.js';
 
 function App() {
+  const [hovered, setHovered] = useState(false);
   const [game, setGame] = useState(new Chess());
   const [winner, setWinner] = useState(null);
   const [gameOver, setGameOver] = useState(false);
 
-  // Let's perform a function on the game state
+  
   function safeGameMutate(modify) {
     setGame((g) => {
       const update = { ...g };
@@ -19,11 +20,11 @@ function App() {
     });
   }
 
-  // Movement of computer
+ 
   function makeRandomMove() {
     const possibleMove = game.moves();
 
-    // exit if the game is over
+
     if (game.game_over() || game.in_draw() || possibleMove.length === 0) {
       setGameOver(true);
       const winner = game.turn() === 'w' ? 'Black' : 'White';
@@ -31,15 +32,14 @@ function App() {
       return;
     }
 
-    // select random move
+    
     const randomIndex = Math.floor(Math.random() * possibleMove.length);
-    // play random move
     safeGameMutate((game) => {
       game.move(possibleMove[randomIndex]);
     });
   }
 
-  // Perform an action when a piece is dropped by a user
+  
   function onDrop(source, target) {
     if (gameOver) return false;
 
@@ -51,9 +51,9 @@ function App() {
         promotion: 'q',
       });
     });
-    // illegal move
+    
     if (move === null) return false;
-    // valid move
+   
     setTimeout(makeRandomMove, 200);
     return true;
   }
@@ -80,8 +80,18 @@ function App() {
 
   return (
     <div className="app">
+       <div 
+        className={`heading ${hovered ? 'slide-out' : ''}`} 
+        onMouseEnter={() => setHovered(true)} 
+        onMouseLeave={() => setHovered(false)}
+      >
+        <h1>
+          CHESS DO ALÉXIS
+        </h1>
+      </div>
       <div className="chessboard-container">
-        <Chessboard position={game.fen()} onPieceDrop={onDrop} />
+        <Chessboard position={game.fen()} onPieceDrop={onDrop}  customLightSquareStyle={{ backgroundColor: '#d9c0a9' }}
+        customDarkSquareStyle={{backgroundColor: '#32583d'}} />
         {gameOver && (
           <div className="game-over">
             <p>Game Over</p>
@@ -93,5 +103,6 @@ function App() {
     </div>
   );
 }
+
 
 export default App;

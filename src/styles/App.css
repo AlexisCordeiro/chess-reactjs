@@ -5,8 +5,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 150px;
+  margin-top: 120px;
 }
+
+
+.heading {
+  transition: transform 0.9s ease, opacity 0.5s ease; /* Adiciona uma transição suave para a propriedade transform */
+}
+
+.slide-out {
+  transform: translateX(100%);
+  opacity: 0; /* Move a div para a direita, fora da tela */
+}
+
 
 .header {
   display: flex;
@@ -16,8 +27,8 @@
 }
 
 .game-image {
-  width: 100px; /* Ajuste a largura conforme necessário */
-  height: auto; /* Mantenha a proporção */
+  width: 100px; 
+  height: auto; 
   margin-right: 20px;
 }
 
@@ -39,7 +50,7 @@
   padding: 20px;
   border-radius: 5px;
   text-align: center;
-  z-index: 1; /* Garante que o elemento fique acima das peças */
+  z-index: 1;
 }
 
 .game-over p {
