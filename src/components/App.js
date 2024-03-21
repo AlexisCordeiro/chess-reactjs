@@ -6,7 +6,6 @@ import { Chessboard } from 'react-chessboard';
 import { Chess } from 'chess.js';
 
 function App() {
-  const [hovered, setHovered] = useState(false);
   const [game, setGame] = useState(new Chess());
   const [winner, setWinner] = useState(null);
   const [gameOver, setGameOver] = useState(false);
@@ -81,17 +80,16 @@ function App() {
   return (
     <div className="app">
        <div 
-        className={`heading ${hovered ? 'slide-out' : ''}`} 
-        onMouseEnter={() => setHovered(true)} 
-        onMouseLeave={() => setHovered(false)}
+        
+       
       >
         <h1>
-          CHESS DO ALÉXIS, LUCAS E BRUNO
+          Xadrez Lucas Gil, João e Julia
         </h1>
       </div>
       <div className="chessboard-container">
         <Chessboard position={game.fen()} onPieceDrop={onDrop}  customLightSquareStyle={{ backgroundColor: '#d9c0a9' }}
-        customDarkSquareStyle={{backgroundColor: '#32583d'}} />
+        customDarkSquareStyle={{backgroundColor: '#ff0000'}} />
         {gameOver && (
           <div className="game-over">
             <p>Game Over</p>

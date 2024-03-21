@@ -9,16 +9,6 @@
 }
 
 
-.heading {
-  transition: transform 0.9s ease, opacity 0.5s ease; /* Adiciona uma transição suave para a propriedade transform */
-}
-
-.slide-out {
-  transform: translateX(100%);
-  opacity: 0; /* Move a div para a direita, fora da tela */
-}
-
-
 .header {
   display: flex;
   align-items: center;
