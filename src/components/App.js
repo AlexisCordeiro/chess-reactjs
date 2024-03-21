@@ -86,7 +86,7 @@ function App() {
         onMouseLeave={() => setHovered(false)}
       >
         <h1>
-          CHESS DO ALÉXIS
+          CHESS DO ALÉXIS, LUCAS E BRUNO
         </h1>
       </div>
       <div className="chessboard-container">
