@@ -93,7 +93,7 @@ function App() {
   return (
     <div className="app">
       <div>
-        <h1>Aléxis Cordeiro</h1>
+        <h1>Aléxis Cordeiro e Bruno Lica</h1>
       </div>
       <div className="chessboard-container">
         <Chessboard
